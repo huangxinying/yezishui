@@ -144,7 +144,7 @@ p{color:var(--muted);line-height:1.75}
 .summary-line{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-bottom:18px;font-size:16px;color:#2b2723}
 .metric-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
 .metric-grid.two{grid-template-columns:repeat(2,minmax(0,1fr));max-width:680px}
-.metric-card{border:1px solid var(--line);border-radius:18px;background:var(--soft);padding:18px;transition:transform .18s ease,background .18s ease,box-shadow .18s ease,border-color .18s ease}
+.metric-card{border:1px solid var(--line);border-radius:18px;background:var(--soft);padding:18px;cursor:pointer;transition:transform .18s ease,background .18s ease,box-shadow .18s ease,border-color .18s ease}
 .metric-card:hover{transform:translateY(-2px);background:#fffdfa;box-shadow:0 18px 48px rgba(49,38,28,.08);border-color:rgba(23,20,18,.14)}
 .metric-number{display:block;margin-bottom:12px;font-family:Georgia,"Times New Roman",serif;font-size:34px;line-height:1;color:#171412;font-weight:700;white-space:nowrap}
 .metric-line{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:30px;color:var(--muted);font-size:13px;font-weight:850;line-height:1.45}
@@ -194,8 +194,134 @@ p{color:var(--muted);line-height:1.75}
 .toast{position:fixed;left:50%;bottom:24px;z-index:50;transform:translate(-50%,16px);padding:10px 14px;border-radius:999px;background:#171412;color:#fffdfa;font-size:13px;font-weight:800;opacity:0;pointer-events:none;transition:opacity .2s ease,transform .2s ease}.toast.show{opacity:1;transform:translate(-50%,0)}
 .reveal{opacity:0;transform:translateY(18px);transition:opacity .55s ease,transform .55s ease}.reveal.visible{opacity:1;transform:none}
 @media(max-width:1180px){.projects{grid-template-columns:1fr}.skill-groups{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:900px){.container{width:min(100% - 32px,1180px)}section{padding:82px 0}.page-progress{display:none}.exp-card{grid-template-columns:1fr;gap:24px}.metric-grid,.metric-grid.two{grid-template-columns:1fr;max-width:none}.about-node,.about-node.right{width:100%;margin:24px 0 0}.about-road{min-height:auto}.about-road svg{display:none}.projects{grid-template-columns:1fr}}
-@media(max-width:600px){.nav{max-width:calc(100% - 20px)}.nav a{font-size:13px;padding:0 10px}.container{width:min(100% - 28px,1180px)}.name{font-size:44px}.position{font-size:17px;white-space:normal}.value{font-size:17px}.proof{grid-template-columns:1fr}.actions .btn,.contact-actions .btn{width:100%}.card{padding:22px}.summary-line{font-size:15px}.metric-number{font-size:30px}.metric-line{align-items:flex-start}.skill-groups{grid-template-columns:1fr}.float-contact{right:16px;bottom:16px}.float-menu{width:142px}.contact:before{inset:28% 4%}.contact:after{font-size:26px;top:31%}}
+
+/* V11 mobile responsive polish */
+@media(max-width:900px){
+  .nav-wrap{top:10px}
+  .nav{max-width:calc(100% - 16px);padding:5px;gap:3px;border-radius:18px;box-shadow:0 10px 28px rgba(49,38,28,.09)}
+  .nav a{min-height:30px;padding:0 10px;font-size:12px;font-weight:800}
+  .container{width:min(100% - 24px,1180px)}
+  section{padding:72px 0;scroll-margin-top:76px}
+  .hero{min-height:86svh;padding-top:88px}
+  .name{font-size:42px;margin-bottom:14px}
+  .position{font-size:16px;white-space:normal;line-height:1.35}
+  .value{font-size:16px;line-height:1.55}
+  .actions{gap:10px;margin:24px 0}
+  .actions .btn{width:auto;flex:1 1 150px;min-height:42px}
+  .proof{grid-template-columns:1fr;gap:10px;margin-top:20px}
+  .proof-item{padding:14px 16px;border-radius:16px}
+  h2{font-size:42px;margin-bottom:20px}
+  .head{margin-bottom:24px}
+  .card{padding:18px;border-radius:18px}
+  .exp-list{gap:16px}
+  .exp-card{grid-template-columns:1fr;gap:18px}
+  .company-title{gap:10px;margin-bottom:14px}
+  .company-icon{width:40px;height:40px}
+  .company-icon svg{width:22px;height:22px}
+  .company-title h3{font-size:23px}
+  .company-meta{gap:6px;padding:12px;border-radius:14px;background:var(--soft-2)}
+  .company-meta div{grid-template-columns:38px 1fr;font-size:13px;line-height:1.5}
+  .exp-main h3{font-size:20px;margin-bottom:10px}
+  .summary-line{max-width:100%;margin-bottom:14px;font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .metric-grid,.metric-grid.two{grid-template-columns:1fr;max-width:none;gap:10px}
+  .metric-card{padding:16px;border-radius:16px}
+  .metric-number{font-size:30px;margin-bottom:10px}
+  .metric-line{min-height:28px;font-size:13px;align-items:center}
+  .metric-detail p{font-size:13px;line-height:1.7}
+  .projects{grid-template-columns:1fr;gap:14px}
+  .case-card h3{font-size:21px;line-height:1.25;margin-bottom:12px}
+  .case-toggle{min-height:40px;padding:0 14px}
+  .case-card.open .case-details{margin-top:14px}
+  .case-block{padding:12px 0}
+  .case-block p{font-size:13px;line-height:1.7}
+  .about-road{min-height:auto;padding:14px 0 4px}
+  .about-road svg{display:block!important;position:absolute;left:-22%;top:6px;width:144%;height:260px;opacity:.58;pointer-events:none}
+  .about-road:before{content:"";position:absolute;left:18px;top:34px;bottom:8px;border-left:2px dashed rgba(165,137,91,.42);border-radius:999px}
+  .about-node{width:calc(100% - 34px);margin:0 0 0 34px!important;padding:18px;border-radius:22px}
+  .about-node.right{margin:18px 0 0 34px!important}
+  .about-node:before{content:"";position:absolute;left:-24px;top:24px;width:12px;height:12px;border-radius:50%;background:#efe3d1;border:1px solid rgba(23,20,18,.16);box-shadow:0 0 0 6px rgba(251,250,247,.92)}
+  .about-node.right:before{background:#dce7e3}
+  .about-node h3{font-size:20px;margin-bottom:8px}
+  .about-node p,.about-node li{font-size:13px;line-height:1.65}
+  .skills-panel{margin-top:22px;padding:18px;border-radius:22px}
+  .skill-groups{grid-template-columns:1fr;gap:10px}
+  .skill-group{padding:15px;border-radius:18px}
+  .skill-group h3{font-size:15px;margin-bottom:10px}
+  .tag{min-height:28px;font-size:12px}
+  .contact{min-height:56vh}
+  .contact:before{inset:24% 4%;border-radius:24px}
+  .contact:after{top:30%;font-size:26px}
+}
+@media(max-width:420px){
+  .nav{width:calc(100% - 16px);justify-content:flex-start}
+  .nav a{padding:0 8px;font-size:12px}
+  .container{width:min(100% - 20px,1180px)}
+  .actions .btn{width:100%;flex-basis:100%}
+  .name{font-size:40px}
+  .proof-item b{font-size:16px}
+  .metric-line{align-items:flex-start}
+  .metric-toggle{min-height:28px;padding:0 9px}
+  .float-contact{right:12px;bottom:12px}
+}
+
+/* V12 unified mobile rhythm */
+@media(max-width:768px){
+  body{overflow-x:hidden;background:#fbfaf7}
+  .nav-wrap{top:8px}
+  .nav{width:calc(100% - 16px);max-width:420px;justify-content:space-between;padding:5px;border-radius:999px}
+  .nav a{flex:1 1 auto;justify-content:center;min-height:30px;padding:0 6px;font-size:12px}
+  .container{width:calc(100% - 24px)}
+  section{padding:68px 0;scroll-margin-top:72px}
+  .hero{min-height:auto;padding-top:96px;padding-bottom:72px}
+  .contact{min-height:auto;padding-top:72px;padding-bottom:82px}
+  .head{margin-bottom:22px}
+  .label{font-size:12px;margin-bottom:8px}
+  h2{font-size:38px;line-height:1;margin-bottom:0}
+  .name{font-size:42px;line-height:1;margin-bottom:14px}
+  .position{font-size:16px;line-height:1.35;margin-bottom:14px}
+  .value{font-size:16px;line-height:1.55;max-width:100%}
+  .actions{display:grid;grid-template-columns:1fr;gap:10px;margin:22px 0}
+  .btn{min-height:42px;font-size:13px;padding:0 14px}
+  .proof{grid-template-columns:1fr;gap:10px;margin-top:18px}
+  .proof-item,.card,.skills-panel,.about-node{border-radius:18px;box-shadow:0 14px 42px rgba(49,38,28,.06)}
+  .proof-item{padding:14px 16px}
+  .proof-item b{font-size:16px}.proof-item span{font-size:13px}
+  .card{padding:18px}
+  .exp-list,.projects{gap:14px}
+  .exp-card{grid-template-columns:1fr;gap:16px}
+  .company-title{margin-bottom:12px}
+  .company-title h3{font-size:22px}
+  .company-icon{width:38px;height:38px}.company-icon svg{width:21px;height:21px}
+  .company-meta{padding:12px;border-radius:14px;background:#f6f4ef;gap:7px}
+  .company-meta div{grid-template-columns:38px 1fr;font-size:13px;line-height:1.5}
+  .exp-main h3,.case-card h3{font-size:20px;line-height:1.28;margin-bottom:10px}
+  .summary-line{white-space:normal;overflow:visible;text-overflow:clip;font-size:14px;line-height:1.65;margin-bottom:14px}
+  .metric-grid,.metric-grid.two{grid-template-columns:1fr;gap:10px;max-width:none}
+  .metric-card{padding:16px;border-radius:16px}
+  .metric-number{font-size:30px;margin-bottom:10px}
+  .metric-line{font-size:13px;min-height:28px;align-items:center}
+  .metric-detail p{font-size:13px;line-height:1.7}
+  .projects{grid-template-columns:1fr}
+  .case-toggle{width:100%;min-height:40px;margin-top:2px}
+  .case-card.open .case-details{margin-top:14px}
+  .case-block{padding:12px 0}.case-block b{font-size:14px}.case-block p{font-size:13px;line-height:1.7}
+  .about-road{position:relative;min-height:0;padding:0 0 2px}
+  .about-road svg{display:none!important}
+  .about-road:before{content:"";position:absolute;left:18px;top:20px;bottom:0;border-left:2px dashed rgba(165,137,91,.42)}
+  .about-node{width:calc(100% - 34px);margin:0 0 0 34px!important;padding:18px;border-radius:18px}
+  .about-node.right{margin:16px 0 0 34px!important}
+  .about-node:before{content:"";position:absolute;left:-23px;top:22px;width:12px;height:12px;border-radius:50%;background:#efe3d1;border:1px solid rgba(23,20,18,.16);box-shadow:0 0 0 6px #fbfaf7}
+  .about-node.right:before{background:#dce7e3}
+  .about-node h3{font-size:19px;margin-bottom:8px}
+  .about-node p,.about-node li{font-size:13px;line-height:1.65}
+  .skills-panel{margin-top:18px;padding:18px;border-radius:18px}
+  .skill-groups{grid-template-columns:1fr;gap:10px}
+  .skill-group{padding:14px;border-radius:16px}.skill-group h3{font-size:15px;margin-bottom:10px}
+  .tag{min-height:28px;font-size:12px}
+  .contact:before{inset:22% 2%;border-radius:22px}.contact:after{top:30%;font-size:24px}
+  .contact-actions{display:grid;grid-template-columns:1fr;gap:10px}
+  .float-contact{right:12px;bottom:12px}.float-main{min-height:44px;padding:0 15px}.float-menu{width:138px}
+}
 </style>
 </head>
 <body>
@@ -224,7 +350,7 @@ p{color:var(--muted);line-height:1.75}
       <p class="value">将客户需求、业务数据与产品方案连接起来，推动商业化效率提升。</p>
       <div class="actions">
         <a class="btn primary" href="#experience">查看经历</a>
-        <a class="btn" href="file:///C:/Users/monica/Desktop/%E5%95%86%E4%B8%9A%E5%8C%96%E8%BF%90%E8%90%A5/%E9%BB%84%E6%96%B0%E9%A2%96-%E4%B8%AD%E5%9B%BD%E5%9C%B0%E8%B4%A8%E5%A4%A7%E5%AD%A6-27%E5%B1%8A-%E4%B8%80%E5%91%A8%E4%BA%94%E5%A4%A9%E5%85%AD%E4%B8%AA%E6%9C%88.pdf" download="黄新颖-中国地质大学-27届-一周五天六个月.pdf">下载简历</a>
+        <a class="btn" href="./resume.pdf" download="黄新颖-中国地质大学-27届-一周五天六个月.pdf">下载简历</a>
       </div>
       <div class="proof">
         <div class="proof-item"><b>AI流程自动化</b><span>效率提升3倍</span></div>
@@ -390,6 +516,27 @@ function updateScrollState(){
 updateScrollState();
 addEventListener('scroll',updateScrollState,{passive:true});
 
+function setMetricOpen(card, open){
+  const button=card.querySelector('.metric-toggle');
+  card.classList.toggle('open',open);
+  if(button){
+    button.setAttribute('aria-expanded',String(open));
+    button.textContent=open?'收起':'展开';
+  }
+}
+
+document.querySelectorAll('.metric-card').forEach(card=>{
+  card.setAttribute('tabindex','0');
+  card.setAttribute('role','button');
+  card.addEventListener('click',()=>setMetricOpen(card,!card.classList.contains('open')));
+  card.addEventListener('keydown',event=>{
+    if(event.key==='Enter'||event.key===' '){
+      event.preventDefault();
+      setMetricOpen(card,!card.classList.contains('open'));
+    }
+  });
+});
+
 function bindToggle(buttonSelector, cardSelector, openText, closedText){
   document.querySelectorAll(buttonSelector).forEach(button=>{
     button.addEventListener('click',event=>{
@@ -402,7 +549,6 @@ function bindToggle(buttonSelector, cardSelector, openText, closedText){
     });
   });
 }
-bindToggle('.metric-toggle','.metric-card','收起','展开');
 bindToggle('.case-toggle','.case-card','收起案例','展开案例');
 
 function showToast(text){
